@@ -12,6 +12,8 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
+display_url: https://www.tulsehilleyes.co.uk/
+
 collections:
   - name: "blog"
     label: "Blog"
