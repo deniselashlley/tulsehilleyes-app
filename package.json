@@ -1,6 +1,5 @@
 {
-  "name": "project-starter",
-  "description": "Gatsby, and Netlify CMS project",
+  "name": "TulseHillEyesWebsite",
   "dependencies": {
     "@tinymce/tinymce-react": "^4.1.0",
     "bulma": "^0.9.0",
