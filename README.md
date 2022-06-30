@@ -3,14 +3,13 @@
 ### Run the project
 
 ```
-$ npm
-$ npm develop
+$ npm develop or gatsby develop
 ```
 
 To test the CMS locally, you'll to need run a production build of the site:
 
 ```
-$ npm build
+$ npm build or gatsby build
 $ npm serve
 ```
 
