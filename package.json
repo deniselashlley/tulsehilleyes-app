@@ -1,5 +1,5 @@
 {
-  "name": "TulseHillEyesWebsite",
+  "name": "tulse-eyes-hill-website",
   "dependencies": {
     "@tinymce/tinymce-react": "^4.1.0",
     "bulma": "^0.9.0",
