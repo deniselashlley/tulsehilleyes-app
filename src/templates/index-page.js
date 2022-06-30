@@ -7,19 +7,22 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import FullWidthImage from "../components/FullWidthImage";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => {
+const IndexPage = ({ data }) => {
+  const { frontmatter: {
+    image,
+    title,
+    heading,
+    subheading,
+    mainpitch,
+    description,
+    intro
+  } } = data.markdownRemark;
+
   const heroImage = getImage(image) || image;
 
   return (
-    <div>
+    <Layout>
+      <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <h1>{mainpitch.title}</h1>
       <div>
@@ -30,35 +33,6 @@ export const IndexPageTemplate = ({
         </section>
       </div>
     </div>
-  );
-};
-
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-};
-
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-
-  return (
-    <Layout>
-      <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
     </Layout>
   );
 };
@@ -74,7 +48,7 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
+  query IndexPage {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
